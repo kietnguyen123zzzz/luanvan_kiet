@@ -16,8 +16,21 @@ class ProductController extends Controller
     public function show()
     {
        
-        return view('.home.product_detail');
+        return view('.home.product');
     }
 
-    
+    /**
+     * Hiển thị danh sách tài nguyên.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function detail()
+    {
+       
+        return view('.home.product_detail');
+    }
 }
+
+
+    
+

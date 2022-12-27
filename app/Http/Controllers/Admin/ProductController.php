@@ -61,7 +61,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('admin.product.edit');
+        return view('admin.product.edit', ['product' => $product]);
     }
 
     /**
@@ -73,7 +73,8 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        return view('admin.product.update');
+        $product->update($request->all());
+        return redirect("/admin/products");
     }
 
     /**

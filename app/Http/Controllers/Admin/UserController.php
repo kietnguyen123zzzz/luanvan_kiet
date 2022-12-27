@@ -15,12 +15,13 @@ class UserController extends Controller
      */
     public function index()
     {
-       
         $users = User::all();
         return view('admin.user.index', ['users' => $users]);
+        
     }
-/**
-     * Show the form for creating a new resource.
+
+    /**
+     * Hiển thị biểu mẫu để tạo tài nguyên mới.
      *
      * @return \Illuminate\Http\Response
      */
@@ -30,7 +31,7 @@ class UserController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Lưu trữ một tài nguyên mới được tạo trong bộ lưu trữ.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -42,48 +43,48 @@ class UserController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Hiển thị tài nguyên được chỉ định.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show(User $user)
     {
         return view('admin.user.show');
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Hiển thị biểu mẫu để chỉnh sửa tài nguyên được chỉ định.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(User $user)
     {
-        return view('admin.user.edit');
+        return view('admin.user.edit', ['user' => $user]);
     }
 
     /**
-     * Update the specified resource in storage.
+     *Cập nhật tài nguyên được chỉ định trong bộ lưu trữ.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, User $user)
     {
-        return view('admin.user.update');
+        $user->update($request->all());
+        return redirect("/admin/users");
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Xóa tài nguyên đã chỉ định khỏi bộ lưu trữ.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(User $user)
     {
         return view('admin.user.destroy');
     }
-    
 }

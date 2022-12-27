@@ -36,17 +36,18 @@
                     <td>{{$user->email}}</td>
                     <td>
                         <nobr>
-                            <button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
-                                <i class="fa fa-lg fa-fw fa-pen"></i>
-                            </button>
+                            <a href="/admin/users/{{$user->id}}/edit">
+                                <button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
+                                    <i class="fa fa-lg fa-fw fa-pen"></i>
+                                </button>
+                            </a>
+                                <button class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">
+                                    <i class="fa fa-lg fa-fw fa-trash"></i>
+                                </button>
                         
-                            <button class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">
-                                <i class="fa fa-lg fa-fw fa-trash"></i>
-                            </button>
-                       
-                            <button class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details">
-                                <i class="fa fa-lg fa-fw fa-eye"></i>
-                            </button>
+                                <button class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details">
+                                    <i class="fa fa-lg fa-fw fa-eye"></i>
+                                </button>
                         </nobr>
 
                     </td>
