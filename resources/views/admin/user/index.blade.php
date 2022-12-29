@@ -41,13 +41,13 @@
                                     <i class="fa fa-lg fa-fw fa-pen"></i>
                                 </button>
                             </a>
+                            <form method="post" action="/admin/users/{{$user->id}}" >
+                                @method('delete')
+                                @csrf
                                 <button class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">
                                     <i class="fa fa-lg fa-fw fa-trash"></i>
                                 </button>
-                        
-                                <button class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details">
-                                    <i class="fa fa-lg fa-fw fa-eye"></i>
-                                </button>
+                            </form>
                         </nobr>
 
                     </td>

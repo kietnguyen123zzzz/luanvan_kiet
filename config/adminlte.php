@@ -332,24 +332,7 @@ return [
                     'icon' => 'fas fa-folder-open ',
                     'url'  => 'http://localhost:8000/admin/categories',
                 ],
-                [
-                    'text' => 'Quản lý tin tức',
-                    'icon' => ' fas fa-mug-hot ',
-                    'url'  => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Danh mục tin tức',
-                            'icon' => 'far fa-folder-open ',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'Nội dung tin tức',
-                            'icon' => 'far fa-copy',
-                            'url'     => '#',
-                            
-                        ],
-                    ],
-                ],
+
                 [
                     'text' => 'Quản lý liên hệ',
                     'icon' => ' fas fa-address-card',

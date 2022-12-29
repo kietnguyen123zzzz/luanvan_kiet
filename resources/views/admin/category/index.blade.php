@@ -13,7 +13,7 @@
         $heads = [
             'ID',
             'Name',
-            'Số thứ tự',
+            'URL',
             ['label' => 'Actions', 'no-export' => true, 'width' => 5],
         ];
         @endphp
@@ -31,7 +31,7 @@
                 <tr>
                     <td>{{$category->id}}</td>
                     <td>{{$category->name}}</td>
-                    <td>{{$category->sort}}</td>
+                    <td>{{$category->alias}}</td>
                     <td>
                         <nobr>
                             <a href="/admin/categories/{{$category->id}}/edit">
@@ -47,9 +47,6 @@
                                 </button>
                             </form>
                        
-                            <button class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details">
-                                <i class="fa fa-lg fa-fw fa-eye"></i>
-                            </button>
                         </nobr>
 
                     </td>

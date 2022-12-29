@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -27,7 +29,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.product.create');
+        $categories = Category::all();
+        return view('admin.product.create',['categories' => $categories]);
     }
 
     /**
@@ -39,7 +42,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         Product::create($request->all());
-        return view('admin.product.store');
+        return redirect("/admin/products");
     }
 
     /**
@@ -61,7 +64,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('admin.product.edit', ['product' => $product]);
+        $categories = Category::all();
+        
+        return view('admin.product.edit', ['product' => $product,'categories' => $categories]);
     }
 
     /**
@@ -85,6 +90,9 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        
+        $product->delete();
+        return redirect("/admin/products");
         return view('admin.product.destroy');
     }
 }

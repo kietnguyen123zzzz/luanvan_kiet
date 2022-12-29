@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use App\Models\Home;
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -15,8 +17,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $categories = Category::all();
        
-        return view('.home.index');
+        $sanphamcua = Product::where('category_id', 1);
+        $sanphamtom = Product::where('category_id', 2);
+        $sanphamca = Product::where('category_id', 7);
+        return view('.home.index',['categories' => $categories,'sanphamcua' => $sanphamcua,'sanphamtom' => $sanphamtom,'sanphamca' => $sanphamca]);
     }
 
     

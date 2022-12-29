@@ -38,6 +38,7 @@ Route::post('/admin/products', [\App\Http\Controllers\Admin\ProductController::c
 Route::put('/admin/products/{product}', [\App\Http\Controllers\Admin\ProductController::class, 'update']);
 Route::delete('/admin/products/{product}', [\App\Http\Controllers\Admin\ProductController::class, 'destroy']);
 
+
 Route::get('/admin/users', [\App\Http\Controllers\Admin\UserController::class, 'index']);
 Route::get('/admin/users/create', [\App\Http\Controllers\Admin\UserController::class, 'create']);
 Route::get('/admin/users/{user}/edit', [\App\Http\Controllers\Admin\UserController::class, 'edit']);
@@ -49,7 +50,10 @@ Route::delete('/admin/users/{user}', [\App\Http\Controllers\Admin\UserController
 
 Route::get('/', [\App\Http\Controllers\Home\HomeController::class, 'index']);
 Route::get('/product', [\App\Http\Controllers\Home\ProductController::class, 'show']);
-Route::get('/product/detail', [\App\Http\Controllers\Home\ProductController::class, 'detail']);
+Route::get('/product/detail/{product}', [\App\Http\Controllers\Home\ProductController::class, 'detail']);
+Route::get('/cart', [\App\Http\Controllers\Home\CartController::class, 'show']);
+Route::get('/gioithieu', [\App\Http\Controllers\Home\GioithieuController::class, 'show']);
+Route::get('/lienhe', [\App\Http\Controllers\Home\LienheController::class, 'show']);
 
 
 

@@ -17,6 +17,7 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
         return view('admin.category.index', ['categories' => $categories]);
+        return redirect("/admin/categories");
     }
 
     /**
@@ -38,7 +39,8 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         Category::create($request->all());
-        return view('admin.category.store');
+       
+        return redirect("/admin/categories");
     }
 
     /**
@@ -87,6 +89,7 @@ class CategoryController extends Controller
     {
       
         $category->delete();
-      
+        return redirect("/admin/categories");
+        return view('admin.category.destroy');
     }
 }

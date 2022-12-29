@@ -1,3 +1,15 @@
+@include('header')
+<section class="bg-gray-200 p-2 mb-2 mt-24">
+    <div class="breadcrumbs-custom-footer">
+        <div class="container">
+          <ul class="flex justify-center">
+            <li><a href="https://seafood.mientaynet.info" class=" text-sm md:text-base"> Trang chủ</a>&nbsp;&nbsp;<i class="fas fa-arrow-right text-sm md:text-base "></i>&nbsp;&nbsp;</li>
+                 <li class="font-bold text-sm md:text-base py-1 md:py-0"> Giỏ hàng</li>
+                        
+          </ul>
+        </div>
+    </div>
+</section>
 <section class="container mx-auto px-5 md:px-10">
     <div class="">
         <div class="">
@@ -232,3 +244,4 @@
      </div>
     </div>
 </section>
+@include('footer')

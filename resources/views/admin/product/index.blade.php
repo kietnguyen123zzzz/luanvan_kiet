@@ -11,8 +11,10 @@
         @php
         $heads = [
             'ID',
+            'Hình ảnh',
             'Name',
             'Giá',
+            'Giá giảm',
             'Số lượng',
             ['label' => 'Actions', 'no-export' => true, 'width' => 5],
         ];
@@ -28,8 +30,10 @@
             @foreach($products as $product)
                 <tr>
                     <td>{{$product->id}}</td>
+                    <td>{{$product->images}}</td>
                     <td>{{$product->name}}</td>
                     <td>{{$product->price}}</td>
+                    <td>{{$product->discount}}</td>
                     <td>{{$product->stock}}</td>
                     <td>
                         <nobr>
@@ -38,13 +42,13 @@
                                     <i class="fa fa-lg fa-fw fa-pen"></i>
                                 </button>
                              </a >
+                             <form method="post" action="/admin/products/{{$product->id}}" >
+                                @method('delete')
+                                @csrf
                                 <button class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">
                                     <i class="fa fa-lg fa-fw fa-trash"></i>
                                 </button>
-                        
-                                <button class="btn btn-xs btn-default text-teal mx-1 shadow" title="Details">
-                                    <i class="fa fa-lg fa-fw fa-eye"></i>
-                                </button>
+                            </form>
                         </nobr>
 
                     </td>
