@@ -52,10 +52,10 @@
         <div class="p-px md:p-2px ">
                             
                 <div class="h-full   border hover:shadow-xl shadow-md rounded-md flex flex-col p-px md:p-px">
-                    <a href="">
-                        <img class="w-full mb-2 flex justify-center" loading="lazy" src="" alt=""/>
+                    <a href="/product/detail/{{$product->id}}">
+                        <img class="w-full mb-2 flex justify-center" loading="lazy" src="{{ $product->images }}" alt=""/>
                     </a>
-                        <a href="">
+                        <a href="/product/detail/{{$product->id}}">
                     <p class=" text-sm md:text-sm line-clamp-1 mb-2 font-bold">{{ $product->name }}</p>
                     <div class="mt-2 md:text-sm text-sm">
 

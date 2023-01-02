@@ -196,7 +196,7 @@ color:#012174;
             </li>
             @foreach($categories as $category)
             <li class="px-4 py-2  hover:text-red-600   text-lucky-point "  >
-                    <a href="/category/the-gioi-tom.html">
+                    <a href="/product">
                     <img class="lg:w-14 md:w-10 mx-auto" src="/data/cms-image/ICON/sp.png" alt="">
                     {{$category->name}}
                     </a>

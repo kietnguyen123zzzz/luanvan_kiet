@@ -315,7 +315,7 @@ color:#1d2a9d;
         </div>
         <div class="flex flex-wrap mt-5  ">
         <div class="w-full md:w-1/3  py-5 md:p-5 relative zoom">
-                        <a class="block" href="/category/the-gioi-tom.html">
+                        <a class="block" href="/product">
                             <img class="w-full" src="/data/cms-image/TOP/IconTour/hinh-anh-tom-hum-dep.jpg" alt="">
                             <div class="absolute w-full px-0 md:p-5 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                                 <div class="w-full py-4 text-center uppercase hover:shadow-2xl" style="background: #1d2a9d;opacity: 80%;">
@@ -327,7 +327,7 @@ color:#1d2a9d;
                     </div>
               
                     <div class="w-full md:w-1/3  py-5 md:p-5 relative zoom">
-                        <a class="block" href="/category/the-gioi-cua.html">
+                        <a class="block" href="/product">
                             <img class="w-full" src="/data/cms-image/TOP/IconTour/anh-con-cua.jpg" alt="">
                             <div class="absolute w-full px-0 md:p-5 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                                 <div class="w-full py-4 text-center uppercase hover:shadow-2xl" style="background: #1d2a9d;opacity: 80%;">
@@ -339,7 +339,7 @@ color:#1d2a9d;
                     </div>
               
                     <div class="w-full md:w-1/3  py-5 md:p-5 relative zoom">
-                        <a class="block" href="/category/the-gioi-ca.html">
+                        <a class="block" href="/product">
                             <img class="w-full" src="/data/cms-image/TOP/IconTour/ca-thu-1.jpg" alt="">
                             <div class="absolute w-full px-0 md:p-5 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                                 <div class="w-full py-4 text-center uppercase hover:shadow-2xl" style="background: #1d2a9d;opacity: 80%;">
