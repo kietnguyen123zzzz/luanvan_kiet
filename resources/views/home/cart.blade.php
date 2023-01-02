@@ -3,7 +3,7 @@
     <div class="breadcrumbs-custom-footer">
         <div class="container">
           <ul class="flex justify-center">
-            <li><a href="https://seafood.mientaynet.info" class=" text-sm md:text-base"> Trang chủ</a>&nbsp;&nbsp;<i class="fas fa-arrow-right text-sm md:text-base "></i>&nbsp;&nbsp;</li>
+            <li><a href="http://localhost:8000/" class=" text-sm md:text-base"> Trang chủ</a>&nbsp;&nbsp;<i class="fas fa-arrow-right text-sm md:text-base "></i>&nbsp;&nbsp;</li>
                  <li class="font-bold text-sm md:text-base py-1 md:py-0"> Giỏ hàng</li>
                         
           </ul>
@@ -198,28 +198,24 @@
                               <tr>
                                 <td colspan="2"
                                         class="pb-2 form-group "> <label for="address1" class="leading-7 text-sm text-gray-600"><i class="fa fa-list-ul"></i> Tỉnh/Thành <span style="color:#005b3a"> (*) </span>:</label>
-                                        <select class="form-select appearance-none block w-full px-3 py-1.5 text-sm md:text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" required name="address1" id="address1" onchange="getDistricts(this);">
-                                            <option selected>Chọn Tỉnh / Thành Phố</option>
-                                        </select>
+                                        <input class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm md:text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out text-gray-700 "  minlength="10" name="company" type="text" placeholder="Tỉnh/thành  "  required value="">
                                 </td>
                             </tr>                            
                             <tr>
                                     <td colspan="2" class="pb-2 form-group "><label for="address2" class="leading-7 text-sm text-gray-600"><i class="fa fa-list-ul"></i> Quận/Huyện <span style="color:#005b3a"> (*) </span>:</label>
-                                         <select class="form-select appearance-none block w-full px-3 py-1.5 text-sm md:text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" required name="address2" id="address2"  onchange="getWards(this);">  
-                                         </select> 
+                                    <input class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm md:text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out text-gray-700 "  minlength="10" name="company" type="text" placeholder="Quận/huyện "  required value="">
                                      </td>
                             </tr>
                             <tr>
                                     <td colspan="2"
                                         class="pb-2 form-group  "> <label for="address2" class="leading-7 text-sm text-gray-600 "><i class="fa fa-list-ul"></i> Phường/Xã<span style="color:#005b3a"> (*) </span>:</label>
-                                         <select class="form-select appearance-none block w-full px-3 py-1.5 text-sm md:text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" name="address3" id="address3" required>  
-                                         </select> 
+                                        <input class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm md:text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out text-gray-700 "  minlength="10" name="company" type="text" placeholder="Phường/xã  "  required value="">
                                      </td>
                             </tr>
                             
                              <tr>                                    
                                 <td colspan="2" class="pb-2 form-group "><label for="company" class="leading-7 text-sm text-gray-600"><i class="fa fa-university"></i> Địa chỉ nhà <span style="color:#005b3a"> (*) </span></label>
-                                        <input class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm md:text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out text-gray-700 "  maxlength="10" name="company" type="text" placeholder="Địa chỉ nhà  "  required value="">
+                                        <input class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm md:text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out text-gray-700 "  minlength="10" name="company" type="text" placeholder="Địa chỉ nhà  "  required value="">
                                 </td>
                             </tr>
 

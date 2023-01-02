@@ -29,10 +29,10 @@ class ProductController extends Controller
      */
     public function detail(Product $product)
     {
-       
+        $categories = Category::all();
         $category = Category::find($product->category_id);
       
-        return view('.home.product_detail',['product' => $product, 'category' => $category]);
+        return view('.home.product_detail',['product' => $product, 'category' => $category,'categories' => $categories]);
     }
 }
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use App\Models\Home;
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class GioithieuController extends Controller
 {
@@ -15,8 +16,8 @@ class GioithieuController extends Controller
      */
     public function show()
     {
-       
-        return view('.home.gioithieu');
+        $categories = Category::all();
+        return view('.home.gioithieu',['categories' => $categories]);
     }
 
     

@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use App\Models\Home;
-use Illuminate\Http\Request;
-use App\Models\Category;
 
-class LienheController extends Controller
+use App\Models\Category;
+use Illuminate\Http\Request;
+
+class HeaderController extends Controller
 {
     /**
      * Hiển thị danh sách tài nguyên.
@@ -17,8 +18,13 @@ class LienheController extends Controller
     public function show()
     {
         $categories = Category::all();
-        return view('.home.lienhe',['categories' => $categories]);
+        
+        return view('.header',['categories' => $categories]);
     }
 
     
 }
+
+
+    
+

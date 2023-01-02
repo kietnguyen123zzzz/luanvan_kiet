@@ -7,7 +7,7 @@ use App\Models\Home;
 use Illuminate\Http\Request;
 use App\Models\Category;
 
-class LienheController extends Controller
+class DoimatkhauController extends Controller
 {
     /**
      * Hiển thị danh sách tài nguyên.
@@ -17,7 +17,7 @@ class LienheController extends Controller
     public function show()
     {
         $categories = Category::all();
-        return view('.home.lienhe',['categories' => $categories]);
+        return view('.home.caplaimatkhau',['categories' => $categories]);
     }
 
     

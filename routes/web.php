@@ -47,6 +47,8 @@ Route::post('/admin/users', [\App\Http\Controllers\Admin\UserController::class, 
 Route::put('/admin/users/{user}', [\App\Http\Controllers\Admin\UserController::class, 'update']);
 Route::delete('/admin/users/{user}', [\App\Http\Controllers\Admin\UserController::class, 'destroy']);
 
+Route::get('/logintest', [\App\Http\Controllers\Auth\TestController::class, 'check']);
+
 
 Route::get('/', [\App\Http\Controllers\Home\HomeController::class, 'index']);
 Route::get('/product', [\App\Http\Controllers\Home\ProductController::class, 'show']);
@@ -54,6 +56,10 @@ Route::get('/product/detail/{product}', [\App\Http\Controllers\Home\ProductContr
 Route::get('/cart', [\App\Http\Controllers\Home\CartController::class, 'show']);
 Route::get('/gioithieu', [\App\Http\Controllers\Home\GioithieuController::class, 'show']);
 Route::get('/lienhe', [\App\Http\Controllers\Home\LienheController::class, 'show']);
+Route::get('/dangnhaphoivien', [\App\Http\Controllers\Home\DangnhaphoivienController::class, 'show']);
+Route::get('/dangky', [\App\Http\Controllers\Home\DangkyController::class, 'show']);
+Route::get('/doimatkhau', [\App\Http\Controllers\Home\DoimatkhauController::class, 'show']);
+
 
 
 
