@@ -319,7 +319,7 @@ return [
                     'text' => 'Quản lý đơn hàng',
                     'icon' => 'fas fa-shopping-cart ',
                     'icon-color' => 'red ',
-                    'url'  => '#',
+                    'url'  => 'http://localhost:8000/admin/orders',
                 ],
                 [
                     'text'    => 'Quản lý sản phẩm',

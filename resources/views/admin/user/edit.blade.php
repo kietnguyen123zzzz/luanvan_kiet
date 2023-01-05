@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<form action="http://localhost:8000/admin/users/{{$user->id}}/" method="post">
+<form action="http://localhost:8000/admin/users/{{$user->user_id}}/" method="post">
         @csrf
         @method("PUT")
         <x-adminlte-input value="{{$user->username}}" name="username" label="Tài khoản" placeholder="Tài khoản" />

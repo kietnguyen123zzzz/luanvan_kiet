@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<form action="http://localhost:8000/admin/categories/{{$category->id}}/" method="post">
+<form action="http://localhost:8000/admin/categories/{{$category->category_id}}/" method="post">
         @csrf
         @method("PUT")
         <x-adminlte-input  value="{{$category->name}}" name="name" label="Tên Danh Mục" placeholder="Tên danh mục" />

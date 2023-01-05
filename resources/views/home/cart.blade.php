@@ -3,7 +3,7 @@
     <div class="breadcrumbs-custom-footer">
         <div class="container">
           <ul class="flex justify-center">
-            <li><a href="http://localhost:8000/" class=" text-sm md:text-base"> Trang chủ</a>&nbsp;&nbsp;<i class="fas fa-arrow-right text-sm md:text-base "></i>&nbsp;&nbsp;</li>
+            <li><a href="" class=" text-sm md:text-base"> Trang chủ</a>&nbsp;&nbsp;<i class="fas fa-arrow-right text-sm md:text-base "></i>&nbsp;&nbsp;</li>
                  <li class="font-bold text-sm md:text-base py-1 md:py-0"> Giỏ hàng</li>
                         
           </ul>
@@ -35,23 +35,21 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
+                        @foreach($products as $product)
                         <tr class="row_cart form-group ">
                             <td class="px-3 py-3 whitespace-nowrap flex justify-end text-sm md:text-base">1</td>
                             <td class="px-6 py-1 md:py-3 whitespace-nowrap">
-                                <a href="https://seafood.mientaynet.info/product/tom-hum.html" class="row_cart-name flex items-center">
-                                    <img width="50" class="mr-2" src="https://seafood.mientaynet.info/data/product/SanPham/Tôm/tom-hum-2.jpg"
-                                        alt="Tôm hùm">
+                                <a href="/product/tom-hum.html" class="row_cart-name flex items-center">
+                                    <img width="50" class="mr-2" src="{{asset($product->model->images)}}"
+                                        alt="{{$product->name}}">
                                     <div class="flex flex-col text-sm md:text-base">
-                                        <p>Tôm hùm</p>  
-                                        <span>                                       
-                                            <b>Mã SKU</b> : tomhum
-                                            <br>                                             
-                                        </span>
+                                        <p>{{$product->name}}</p>  
+                                       
                                     </div>  
                                 </a>  
                                 </a>
                             </td> 
-                            <td class=" px-10 md:px-6 py-3 whitespace-nowrap"><div class="text-red-500 font-bold text-sm md:text-base">60,000 VNĐ/1kg</div></td>
+                            <td class=" px-10 md:px-6 py-3 whitespace-nowrap"><div class="text-red-500 font-bold text-sm md:text-base">{{$product->price}} VNĐ/1kg</div></td>
                             <td class="px-6 py-3 whitespace-nowrap">
                                 <div class="flex gap-5" id="test">
                                     <div id="reduce"><span><i class="fas fa-minus text-sm md:text-base"></i></span></div>
@@ -67,22 +65,23 @@
                             </td>
 
                             <td class="px-6 py-3 whitespace-nowrap text-sm md:text-base">
-                                60,000 VNĐ/1kg
+                            {{$product->price * $product->qty}} VNĐ/1kg
                             </td>
 
                             <td class="px-6 py-3 whitespace-nowrap text-sm md:text-base">
                                 <a onClick="return confirm('Confirm?')" title="Remove Item" alt="Remove Item"
                                     class="cart_quantity_delete"
-                                    href="https://seafood.mientaynet.info/cart/remove/c47ebecd28dc8e70b29c26e1c7062152">
+                                    href="/cart/remove/c47ebecd28dc8e70b29c26e1c7062152">
                                     <i class="fa fa-times text-sm md:text-base" aria-hidden="true"></i>
                                 </a>
                             </td>
                         </tr>
+                    @endforeach
 
-</tbody>
+                 </tbody>
                   <tfoot class="bg-gray-50">
                         <th colspan="4" class="py-2"><span class="uppercase text-sm md:text-base">Tổng tiền</span></th>
-                        <th class="px-6 text-left py-2 text-sm md:text-base">60,000VNĐ/1kg</th>
+                        <th class="px-6 text-left py-2 text-sm md:text-base">{{ Cart::priceTotal() }}</th>
                         <th></th>
                     </tfoot>
                     </table>
@@ -97,8 +96,8 @@
                 </a>
             </div>
             <div class="w-full">
-            <form class="sc-shipping-address" id="form-process" role="form" method="POST" action="https://seafood.mientaynet.info/checkout-process">
-                <input type="hidden" name="_token" value="JgAmStk0OKBSxI1p27mjumcGc2RMreIwLJZLlWtg">  
+            <form class="sc-shipping-address" id="form-process" role="form" method="POST" action="/checkout">
+                @csrf
                 <div class="flex flex-wrap md:flex-nowrap">
                     <div class="w-full md:w-1/2 md:pl-5">
                         
@@ -179,7 +178,7 @@
                                <td colspan="2"class="form-group ">
                                     <label for="first_name" class="leading-7 text-sm text-gray-600 "><i class="fa fa-user"></i>
                                          Tên <span style="color:#005b3a"> (*) </span>:</label>
-                                        <input class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm md:text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200" required maxlength="6" name="first_name" type="text" placeholder="Tên" value="" required />
+                                        <input class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm md:text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200" required maxlength="6" name="name" type="text" placeholder="Tên" value="" required />
                                 </td>
                             </tr>
                             <tr>
@@ -194,28 +193,10 @@
                                 </td>
                                 </tr>                     
                             <tr>
-                            </tr>
-                              <tr>
-                                <td colspan="2"
-                                        class="pb-2 form-group "> <label for="address1" class="leading-7 text-sm text-gray-600"><i class="fa fa-list-ul"></i> Tỉnh/Thành <span style="color:#005b3a"> (*) </span>:</label>
-                                        <input class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm md:text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out text-gray-700 "  minlength="10" name="company" type="text" placeholder="Tỉnh/thành  "  required value="">
-                                </td>
-                            </tr>                            
-                            <tr>
-                                    <td colspan="2" class="pb-2 form-group "><label for="address2" class="leading-7 text-sm text-gray-600"><i class="fa fa-list-ul"></i> Quận/Huyện <span style="color:#005b3a"> (*) </span>:</label>
-                                    <input class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm md:text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out text-gray-700 "  minlength="10" name="company" type="text" placeholder="Quận/huyện "  required value="">
-                                     </td>
-                            </tr>
-                            <tr>
-                                    <td colspan="2"
-                                        class="pb-2 form-group  "> <label for="address2" class="leading-7 text-sm text-gray-600 "><i class="fa fa-list-ul"></i> Phường/Xã<span style="color:#005b3a"> (*) </span>:</label>
-                                        <input class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm md:text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out text-gray-700 "  minlength="10" name="company" type="text" placeholder="Phường/xã  "  required value="">
-                                     </td>
-                            </tr>
                             
                              <tr>                                    
-                                <td colspan="2" class="pb-2 form-group "><label for="company" class="leading-7 text-sm text-gray-600"><i class="fa fa-university"></i> Địa chỉ nhà <span style="color:#005b3a"> (*) </span></label>
-                                        <input class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm md:text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out text-gray-700 "  minlength="10" name="company" type="text" placeholder="Địa chỉ nhà  "  required value="">
+                                <td colspan="2" class="pb-2 form-group "><label for="address" class="leading-7 text-sm text-gray-600"><i class="fa fa-university"></i> Địa chỉ nhà <span style="color:#005b3a"> (*) </span></label>
+                                        <input class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-sm md:text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out text-gray-700 "  maxlength="10" name="address" type="text" placeholder="Địa chỉ nhà  "  required value="">
                                 </td>
                             </tr>
 

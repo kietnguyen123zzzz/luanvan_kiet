@@ -30,18 +30,18 @@
        
             @foreach($users as $user)
                 <tr>
-                    <td>{{$user->id}}</td>
+                    <td>{{$user->user_id}}</td>
                     <td>{{$user->username}}</td>
                     <td>{{$user->password}}</td>
                     <td>{{$user->email}}</td>
                     <td>
                         <nobr>
-                            <a href="/admin/users/{{$user->id}}/edit">
+                            <a href="/admin/users/{{$user->user_id}}/edit">
                                 <button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
                                     <i class="fa fa-lg fa-fw fa-pen"></i>
                                 </button>
                             </a>
-                            <form method="post" action="/admin/users/{{$user->id}}" >
+                            <form method="post" action="/admin/users/{{$user->user_id}}" >
                                 @method('delete')
                                 @csrf
                                 <button class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">

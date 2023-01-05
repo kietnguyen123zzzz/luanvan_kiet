@@ -4,7 +4,7 @@
     <div class="breadcrumbs-custom-footer">
         <div class="container">
           <ul class="flex justify-center">
-            <li><a href="https://seafood.mientaynet.info" class=" text-sm md:text-base"> Trang chủ</a>&nbsp;&nbsp;<i class="fas fa-arrow-right text-sm md:text-base "></i>&nbsp;&nbsp;</li>
+            <li><a href="http://localhost:8000/" class=" text-sm md:text-base"> Trang chủ</a>&nbsp;&nbsp;<i class="fas fa-arrow-right text-sm md:text-base "></i>&nbsp;&nbsp;</li>
                  <li class="font-bold text-sm md:text-base py-1 md:py-0"> Tất cả sản phẩm </li>
                         
           </ul>
@@ -52,10 +52,10 @@
         <div class="p-px md:p-2px ">
                             
                 <div class="h-full   border hover:shadow-xl shadow-md rounded-md flex flex-col p-px md:p-px">
-                    <a href="/product/detail/{{$product->id}}">
+                    <a href="/product/detail/{{$product->product_id}}">
                         <img class="w-full mb-2 flex justify-center" loading="lazy" src="{{ $product->images }}" alt=""/>
                     </a>
-                        <a href="/product/detail/{{$product->id}}">
+                        <a href="/product/detail/{{$product->product_id}}">
                     <p class=" text-sm md:text-sm line-clamp-1 mb-2 font-bold">{{ $product->name }}</p>
                     <div class="mt-2 md:text-sm text-sm">
 
@@ -67,7 +67,7 @@
                                             <div class="text-red-500 font-bold">{{ $product->discount }} VNĐ/1kg</div>
                                             <div class="text-gray-500 line-through"> {{ $product->price }} VNĐ/1kg</div>
             
-                                            <div class="add_to_cart" data-id="{{$product->id}}" data-price="{{$product->price}}" data-store-id="" data-qty="1">
+                                            <div class="add_to_cart" data-id="{{$product->product_id}}" data-price="{{$product->price}}" data-store-id="" data-qty="1">
                                                <i class="text-lucky-point fas fa-shopping-cart"> </i>
                                             </div>
                                         </div>      
