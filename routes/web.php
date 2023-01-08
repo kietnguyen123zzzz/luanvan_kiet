@@ -58,12 +58,13 @@ Route::delete('/admin/orders/{order_id}', [\App\Http\Controllers\Admin\OrderCont
 Route::post('/cart_add/{product_id}', [\App\Http\Controllers\Home\CartController::class, 'add']);
 Route::post('/checkout', [\App\Http\Controllers\Home\CartController::class, 'checkout']);
 
-Route::get('/logintest', [\App\Http\Controllers\Auth\TestController::class, 'check']);
+Route::get('/admin', [\App\Http\Controllers\Auth\LoginController::class, 'adminLogin']);
+Route::get('/admin/login', [\App\Http\Controllers\Auth\LoginController::class, 'index']);
 
 
 Route::get('/', [\App\Http\Controllers\Home\HomeController::class, 'index']);
 Route::get('/product', [\App\Http\Controllers\Home\ProductController::class, 'show']);
-Route::get('/product/detail/{product_id}', [\App\Http\Controllers\Home\ProductController::class, 'detail']);
+Route::get('/product/detail/{product}', [\App\Http\Controllers\Home\ProductController::class, 'detail']);
 Route::get('/cart', [\App\Http\Controllers\Home\CartController::class, 'show']);
 Route::get('/gioithieu', [\App\Http\Controllers\Home\GioithieuController::class, 'show']);
 Route::get('/lienhe', [\App\Http\Controllers\Home\LienheController::class, 'show']);

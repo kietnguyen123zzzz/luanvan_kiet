@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
@@ -16,7 +16,7 @@ class LoginController extends Controller
     public function index()
     {
         
-        return view('.admin.login.index');
+        return view('.auth.login');
        
     }
     /**
@@ -29,9 +29,12 @@ class LoginController extends Controller
         return view('admin.login.create');
     }
 
-    public function username()
-{
-    return 'username';
-}
+   
 
+
+    public function adminLogin(Request $request)
+    {
+    return redirect()->intended('/admin');
+    return view('.auth.login');
+}
 }

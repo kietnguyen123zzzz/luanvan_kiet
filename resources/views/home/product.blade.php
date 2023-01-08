@@ -52,10 +52,10 @@
         <div class="p-px md:p-2px ">
                             
                 <div class="h-full   border hover:shadow-xl shadow-md rounded-md flex flex-col p-px md:p-px">
-                    <a href="/product/detail/{{$product->product_id}}">
+                    <a href="/product/detail/{{$product->id}}">
                         <img class="w-full mb-2 flex justify-center" loading="lazy" src="{{ $product->images }}" alt=""/>
                     </a>
-                        <a href="/product/detail/{{$product->product_id}}">
+                        <a href="/product/detail/{{$product->id}}">
                     <p class=" text-sm md:text-sm line-clamp-1 mb-2 font-bold">{{ $product->name }}</p>
                     <div class="mt-2 md:text-sm text-sm">
 
@@ -67,7 +67,7 @@
                                             <div class="text-red-500 font-bold">{{ $product->discount }} VNĐ/1kg</div>
                                             <div class="text-gray-500 line-through"> {{ $product->price }} VNĐ/1kg</div>
             
-                                            <div class="add_to_cart" data-id="{{$product->product_id}}" data-price="{{$product->price}}" data-store-id="" data-qty="1">
+                                            <div class="add_to_cart" data-id="{{$product->id}}" data-price="{{$product->price}}" data-store-id="" data-qty="1">
                                                <i class="text-lucky-point fas fa-shopping-cart"> </i>
                                             </div>
                                         </div>      

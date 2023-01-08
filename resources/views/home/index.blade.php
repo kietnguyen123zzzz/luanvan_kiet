@@ -369,16 +369,13 @@ color:#1d2a9d;
             
            
             <div class="grid md:grid-cols-4 grid-cols-2  md:gap-0 gap-2">
-            @php
-dd($category->product)
-@endphp
             @foreach($category->products as $product)
                  <div class=" h-full w-full p-0 md:p-1 ">
                                 <div class="h-full w-auto  border  hover:shadow-2xl shadow-md rounded-md flex flex-col md:p-1 p-2" style="">
-                                    <a href="/product/detail/{{$product->product_id}}">
+                                    <a href="/product/detail/{{$product->id}}">
                                         <img class="w-full mb-2 flex justify-center" loading="lazy" src="{{ $product->images }}" alt=""/>
                                     </a>
-                                        <a href="/product/detail/{{$product->product_id}}">
+                                        <a href="/product/detail/{{$product->id}}">
                                     <p class=" text-sm md:text-sm line-clamp-2 mb-2  font-bold  ">
                                         {{ $product->name }}
                                     </p>                               
@@ -391,7 +388,7 @@ dd($category->product)
                                             <div class="text-red-500 font-bold">{{ $product->discount }} VNĐ/1kg</div>
                                             <div class="text-gray-500 line-through"> {{ $product->price }} VNĐ/1kg</div>
             
-                                            <div class="add_to_cart" data-id="{{$product->product_id}}" data-price="{{$product->price}}" data-store-id="" data-qty="1">
+                                            <div class="add_to_cart" data-id="{{$product->id}}" data-price="{{$product->price}}" data-store-id="" data-qty="1">
                                                <i class="text-lucky-point fas fa-shopping-cart"> </i>
                                             </div>
                                         </div>                                     

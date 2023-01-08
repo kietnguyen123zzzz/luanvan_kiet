@@ -68,7 +68,7 @@
 </div>
 
 <div class="mt-5">
-  <form id="buy_block" class="product-information" action="/cart_add/{{$product->id}}" method="get">
+  <form id="buy_block" class="product-information" action="/cart_add/{{$product->product_id}}" method="get">
     @csrf
         <div>
           <p class="mb-2 mt-5 font-bold md:text-sm text-lucky-point" >Số lượng</p>
