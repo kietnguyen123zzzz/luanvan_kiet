@@ -29,17 +29,17 @@
        
             @foreach($categories as $category)
                 <tr>
-                    <td>{{$category->category_id}}</td>
+                    <td>{{$category->id}}</td>
                     <td>{{$category->name}}</td>
                     <td>{{$category->alias}}</td>
                     <td>
                         <nobr>
-                            <a href="/admin/categories/{{$category->category_id}}/edit">
+                            <a href="/admin/categories/{{$category->id}}/edit">
                                 <button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
                                     <i class="fa fa-lg fa-fw fa-pen"></i>
                                 </button>
                             </a>
-                            <form method="post" action="/admin/categories/{{$category->category_id}}" >
+                            <form method="post" action="/admin/categories/{{$category->id}}" >
                                 @method('delete')
                                 @csrf
                                 <button  class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">

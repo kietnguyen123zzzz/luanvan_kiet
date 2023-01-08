@@ -31,19 +31,19 @@
        
             @foreach($orders as $order)
                 <tr>
-                    <td>{{$order->order_id}}</td>
+                    <td>{{$order->id}}</td>
                     <td>{{$order->name}}</td>
                     <td>{{$order->phone}}</td>
                     <td>{{$order->email}}</td>
                     <td>{{$order->address}}</td>
                     <td>
                         <nobr>
-                            <a href="/admin/orders/{{$order->order_id}}/edit">
+                            <a href="/admin/orders/{{$order->id}}/edit">
                                 <button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
                                     <i class="fa fa-lg fa-fw fa-pen"></i>
                                 </button>
                             </a>
-                            <form method="post" action="/admin/orders/{{$order->order_id}}" >
+                            <form method="post" action="/admin/orders/{{$order->id}}" >
                                 @method('delete')
                                 @csrf
                                 <button  class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">

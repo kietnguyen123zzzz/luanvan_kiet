@@ -22,21 +22,21 @@ Route::get('test-route', function () {
 
 Route::get('/admin/categories', [\App\Http\Controllers\Admin\CategoryController::class, 'index']);
 Route::get('/admin/categories/create', [\App\Http\Controllers\Admin\CategoryController::class, 'create']);
-Route::get('/admin/categories/{category_id}/edit', [\App\Http\Controllers\Admin\CategoryController::class, 'edit']);
-Route::get('/admin/categories/{category_id}', [\App\Http\Controllers\Admin\CategoryController::class, 'show']);
+Route::get('/admin/categories/{id}/edit', [\App\Http\Controllers\Admin\CategoryController::class, 'edit']);
+Route::get('/admin/categories/{id}', [\App\Http\Controllers\Admin\CategoryController::class, 'show']);
 Route::post('/admin/categories', [\App\Http\Controllers\Admin\CategoryController::class, 'store']);
-Route::put('/admin/categories/{category_id}', [\App\Http\Controllers\Admin\CategoryController::class, 'update']);
-Route::DELETE('/admin/categories/{category_id}', [\App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
+Route::put('/admin/categories/{id}', [\App\Http\Controllers\Admin\CategoryController::class, 'update']);
+Route::DELETE('/admin/categories/{id}', [\App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
 
 
 
 Route::get('/admin/products', [\App\Http\Controllers\Admin\ProductController::class, 'index']);
 Route::get('/admin/products/create', [\App\Http\Controllers\Admin\ProductController::class, 'create']);
-Route::get('/admin/products/{product_id}/edit', [\App\Http\Controllers\Admin\ProductController::class, 'edit']);
-Route::get('/admin/products/{product_id}', [\App\Http\Controllers\Admin\ProductController::class, 'show']);
+Route::get('/admin/products/{id}/edit', [\App\Http\Controllers\Admin\ProductController::class, 'edit']);
+Route::get('/admin/products/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'show']);
 Route::post('/admin/products', [\App\Http\Controllers\Admin\ProductController::class, 'store']);
-Route::put('/admin/products/{product_id}', [\App\Http\Controllers\Admin\ProductController::class, 'update']);
-Route::delete('/admin/products/{product_id}', [\App\Http\Controllers\Admin\ProductController::class, 'destroy']);
+Route::put('/admin/products/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'update']);
+Route::delete('/admin/products/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'destroy']);
 
 
 Route::get('/admin/users', [\App\Http\Controllers\Admin\UserController::class, 'index']);
@@ -50,12 +50,12 @@ Route::delete('/admin/users/{user_id}', [\App\Http\Controllers\Admin\UserControl
 
 Route::get('/admin/orders', [\App\Http\Controllers\Admin\OrderController::class, 'index']);
 Route::get('/admin/orders/create', [\App\Http\Controllers\Admin\OrderController::class, 'create']);
-Route::get('/admin/orders/{order_id}/edit', [\App\Http\Controllers\Admin\OrderController::class, 'edit']);
-Route::get('/admin/orders/{order_id}', [\App\Http\Controllers\Admin\OrderController::class, 'show']);
+Route::get('/admin/orders/{id}/edit', [\App\Http\Controllers\Admin\OrderController::class, 'edit']);
+Route::get('/admin/orders/{id}', [\App\Http\Controllers\Admin\OrderController::class, 'show']);
 Route::post('/admin/orders', [\App\Http\Controllers\Admin\OrderController::class, 'store']);
-Route::put('/admin/orders/{order_id}', [\App\Http\Controllers\Admin\OrderController::class, 'update']);
-Route::delete('/admin/orders/{order_id}', [\App\Http\Controllers\Admin\OrderController::class, 'destroy']);
-Route::post('/cart_add/{product_id}', [\App\Http\Controllers\Home\CartController::class, 'add']);
+Route::put('/admin/orders/{id}', [\App\Http\Controllers\Admin\OrderController::class, 'update']);
+Route::delete('/admin/orders/{id}', [\App\Http\Controllers\Admin\OrderController::class, 'destroy']);
+Route::post('/cart_add/{id}', [\App\Http\Controllers\Home\CartController::class, 'add']);
 Route::post('/checkout', [\App\Http\Controllers\Home\CartController::class, 'checkout']);
 
 Route::get('/admin', [\App\Http\Controllers\Auth\LoginController::class, 'adminLogin']);

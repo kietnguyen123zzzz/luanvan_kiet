@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<form action="http://localhost:8000/admin/orders/{{$order->order_id}}/" method="post">
+<form action="http://localhost:8000/admin/orders/{{$order->id}}/" method="post">
         @csrf
         @method("PUT")
         <x-adminlte-input value="{{$order->name}}" name="name" label="Tên " placeholder="Tên " />
@@ -18,7 +18,7 @@
         
         <x-adminlte-input  value="{{$order->phone}}" name="phone" label="Số điện thoại" placeholder="Số điện thoại" />
 
-        <x-adminlte-input  value="{{$order->email}}" name="mail" label="mail" placeholder="mail" />
+        <x-adminlte-input  value="{{$order->email}}" name="email" label="email" placeholder="email" />
         
         <x-adminlte-button class="btn-flat" type="submit" label="Submit" theme="success" icon="fas fa-lg fa-save"/>
 

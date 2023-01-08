@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<form action="http://localhost:8000/admin/products/{{$product->product_id}}" method="post">
+<form action="http://localhost:8000/admin/products/{{$product->id}}" method="post">
         @csrf
         @method("PUT")
         <x-adminlte-input value="{{$product->name}}" name="name" label="Tên Sản Phẩm" placeholder="Tên sản phẩm" />
@@ -18,7 +18,7 @@
 
         <x-adminlte-select value="{{$product->category_id}}" label="Chọn Danh Mục"  name="category_id">
             @foreach($categories as $category)
-            <option  value="{{$category->category_id}}">{{$category->name}}</option>
+            <option  value="{{$category->id}}">{{$category->name}}</option>
             @endforeach        
         </x-adminlte-select>
     

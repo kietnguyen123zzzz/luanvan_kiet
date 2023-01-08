@@ -19,7 +19,7 @@
 
         <x-adminlte-input name="phone" label="Số điện thoại" placeholder="Số điện thoại" />
 
-        <x-adminlte-input name="mail" label="mail" placeholder="mail" />
+        <x-adminlte-input name="email" label="email" placeholder="email" />
        
         <x-adminlte-button class="btn-flat" type="submit" label="Submit" theme="success" icon="fas fa-lg fa-save"/>
 

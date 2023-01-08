@@ -29,7 +29,7 @@
         </a>  
             @foreach($products as $product)
                 <tr>
-                    <td>{{$product->product_id}}</td>
+                    <td>{{$product->id}}</td>
                     <td>{{$product->images}}</td>
                     <td>{{$product->name}}</td>
                     <td>{{$product->price}}</td>
@@ -37,12 +37,12 @@
                     <td>{{$product->stock}}</td>
                     <td>
                         <nobr>
-                            <a href="/admin/products/{{$product->product_id}}/edit">
+                            <a href="/admin/products/{{$product->id}}/edit">
                                 <button class="btn btn-xs btn-default text-primary mx-1 shadow" title="Edit">
                                     <i class="fa fa-lg fa-fw fa-pen"></i>
                                 </button>
                              </a >
-                             <form method="post" action="/admin/products/{{$product->product_id}}" >
+                             <form method="post" action="/admin/products/{{$product->id}}" >
                                 @method('delete')
                                 @csrf
                                 <button class="btn btn-xs btn-default text-danger mx-1 shadow" title="Delete">
