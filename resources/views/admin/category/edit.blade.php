@@ -16,6 +16,7 @@
       
         <x-adminlte-input value="{{$category->alias}}" name="alias" label="URL" placeholder="url" />
     
+        <x-adminlte-input value="{{$category->images}}" type="file"  name="images" label="Hình Ảnh"  placeholder="Hình ảnh" />
         
         <x-adminlte-button class="btn-flat" type="submit" label="Submit" theme="success" icon="fas fa-lg fa-save"/>
 

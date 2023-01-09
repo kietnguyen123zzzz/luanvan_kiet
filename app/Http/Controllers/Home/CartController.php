@@ -7,7 +7,6 @@ use App\Models\Home;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Order;
-use App\Models\Category;
 
 use Cart;
 
@@ -21,10 +20,8 @@ class CartController extends Controller
     public function show()
     {
        $products = Cart::content();
-       $categories = Category::all();
         return view('home.cart', [
-            'products' => $products,
-            'categories' => $categories
+            'products' => $products
         ]);
     }
 
@@ -33,13 +30,14 @@ class CartController extends Controller
         $id = $product->id;
         $name = $product->name;
         $price = (int)$product->price;
+        $discount = (int)$product->discount;
         $quantity = 1;
         if($request->has('quantity'))
         {
             $quantity = $request->post('quantity');
         }
 
-        Cart::add($id, $name, $quantity, $price)->associate('App\Models\Product');
+        Cart::add($id, $name, $quantity, $price,$discount)->associate('App\Models\Product');
         return redirect('/cart');
 
     }
@@ -53,7 +51,7 @@ class CartController extends Controller
         $order->address = $request->post('address');
         $order->phone = $request->post('phone');
         $order->name = $request->post('name');
-        $order->mail = $request->post('mail');
+        $order->email = $request->post('email');
         $order->status_id = 1;
 
         if($order->save())

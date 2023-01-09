@@ -3,7 +3,7 @@
     <div class="breadcrumbs-custom-footer">
         <div class="container">
           <ul class="flex justify-center">
-            <li><a href="http://localhost:8000/" class=" text-sm md:text-base"> Trang chủ</a>&nbsp;&nbsp;<i class="fas fa-arrow-right text-sm md:text-base "></i>&nbsp;&nbsp;</li>
+            <li><a href="https://seafood.mientaynet.info" class=" text-sm md:text-base"> Trang chủ</a>&nbsp;&nbsp;<i class="fas fa-arrow-right text-sm md:text-base "></i>&nbsp;&nbsp;</li>
                  <li class="font-bold text-sm md:text-base py-1 md:py-0">{{$product->name}} </li>
                         
           </ul>
@@ -48,7 +48,7 @@
                               <a href="">{{$category->name}}</a>
                           </div>
             <div class="mt-2">
-             
+              <b>Thành phần: </b>
                 {{$product->keyword}}
             </div>
             <div class="mt-2"><span class="font-bold">Số lượng trong kho : </span> {{$product->stock}}kg</div>
@@ -68,7 +68,7 @@
 </div>
 
 <div class="mt-5">
-  <form id="buy_block" class="product-information" action="/cart_add/{{$product->product_id}}" method="get">
+  <form id="buy_block" class="product-information" action="/cart_add/{{$product->id}}" method="get">
     @csrf
         <div>
           <p class="mb-2 mt-5 font-bold md:text-sm text-lucky-point" >Số lượng</p>
@@ -77,13 +77,13 @@
       
       
         <div class="flex flex-col gap-3">
-          
+          <div class="w-8 h-9 border-2 border-gray-300 flex justify-center items-center minus"><i class="fas fa-minus text-xl"></i></div>
         </div>
         <div class="">
           <input class="w-14 h-9 border-t-2 border-b-2 border-gray-300  p-4  text-xl qty text-center" type="number" min=1 value="1" name="qty">
         </div>
         <div>
-          
+          <div class="w-8 h-9 border-2 border-gray-300 flex justify-center items-center add"><i class="fas fa-plus text-xl"></i></div>
         </div>
         <!-- <div class="ml-2 md:ml-2 add_to_cart zoom" id="add_to_cart" data-id="1197" data-price="450000" data-store-id="" data-qty="1">
           <button type="submit"  class="w-32 text-sm flex items-center  px-2  h-9 text-white uppercase rounded bg-lucky-point  justify-center  " > 
@@ -179,13 +179,13 @@
       
       
         <div class="flex flex-col gap-3">
-          
+          <div class="w-8 h-9 border-2 border-gray-300 flex justify-center items-center minus"><i class="fas fa-minus text-xl"></i></div>
         </div>
         <div class="">
           <input class="w-14 h-9 border-t-2 border-b-2 border-gray-300  p-4  text-xl qty text-center" type="number" min=1 value="1" name="qty">
         </div>
         <div>
-         
+          <div class="w-8 h-9 border-2 border-gray-300 flex justify-center items-center add"><i class="fas fa-plus text-xl"></i></div>
         </div>
         <!-- <div class="ml-2 md:ml-2 add_to_cart zoom" id="add_to_cart" data-id="1197" data-price="450000" data-store-id="" data-qty="1">
           <button type="submit"  class="w-32 text-sm flex items-center  px-2  h-9 text-white uppercase rounded bg-lucky-point  justify-center  " > 

@@ -34,7 +34,7 @@ class LoginController extends Controller
 
     public function adminLogin(Request $request)
     {
-    return redirect()->intended('/admin');
-    return view('.auth.login');
+    return redirect()->intended('/login');
+   
 }
 }

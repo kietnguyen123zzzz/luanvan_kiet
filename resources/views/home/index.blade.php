@@ -310,12 +310,12 @@ color:#1d2a9d;
             CÁC LOẠI HẢI SẢN
             </div>
             <div>
-                <a class="hover:text-red-500 " href="/tin-tuc/linh-vuc-san-xuat"></a>  
+                <a class="hover:text-red-500 " href=""></a>  
             </div>
         </div>
         <div class="flex flex-wrap mt-5  ">
         <div class="w-full md:w-1/3  py-5 md:p-5 relative zoom">
-                        <a class="block" href="/category/the-gioi-tom.html">
+                        <a class="block" href="/product">
                             <img class="w-full" src="/data/cms-image/TOP/IconTour/hinh-anh-tom-hum-dep.jpg" alt="">
                             <div class="absolute w-full px-0 md:p-5 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                                 <div class="w-full py-4 text-center uppercase hover:shadow-2xl" style="background: #1d2a9d;opacity: 80%;">
@@ -327,7 +327,7 @@ color:#1d2a9d;
                     </div>
               
                     <div class="w-full md:w-1/3  py-5 md:p-5 relative zoom">
-                        <a class="block" href="/category/the-gioi-cua.html">
+                        <a class="block" href="/product">
                             <img class="w-full" src="/data/cms-image/TOP/IconTour/anh-con-cua.jpg" alt="">
                             <div class="absolute w-full px-0 md:p-5 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                                 <div class="w-full py-4 text-center uppercase hover:shadow-2xl" style="background: #1d2a9d;opacity: 80%;">
@@ -339,7 +339,7 @@ color:#1d2a9d;
                     </div>
               
                     <div class="w-full md:w-1/3  py-5 md:p-5 relative zoom">
-                        <a class="block" href="/category/the-gioi-ca.html">
+                        <a class="block" href="/product">
                             <img class="w-full" src="/data/cms-image/TOP/IconTour/ca-thu-1.jpg" alt="">
                             <div class="absolute w-full px-0 md:p-5 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                                 <div class="w-full py-4 text-center uppercase hover:shadow-2xl" style="background: #1d2a9d;opacity: 80%;">
@@ -369,7 +369,7 @@ color:#1d2a9d;
             
            
             <div class="grid md:grid-cols-4 grid-cols-2  md:gap-0 gap-2">
-            @foreach($category->products as $product)
+            @foreach( $category->products()->where('category_id', $category->id)->get() as $product )
                  <div class=" h-full w-full p-0 md:p-1 ">
                                 <div class="h-full w-auto  border  hover:shadow-2xl shadow-md rounded-md flex flex-col md:p-1 p-2" style="">
                                     <a href="/product/detail/{{$product->id}}">
@@ -389,7 +389,7 @@ color:#1d2a9d;
                                             <div class="text-gray-500 line-through"> {{ $product->price }} VNĐ/1kg</div>
             
                                             <div class="add_to_cart" data-id="{{$product->id}}" data-price="{{$product->price}}" data-store-id="" data-qty="1">
-                                               <i class="text-lucky-point fas fa-shopping-cart"> </i>
+                                            <a href="/product/detail/{{$product->id}}"><i class="text-lucky-point fas fa-shopping-cart"> </i></a>
                                             </div>
                                         </div>                                     
                                     </div>

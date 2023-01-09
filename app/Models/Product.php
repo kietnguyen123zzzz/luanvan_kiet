@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    
     use HasFactory;
-    protected $fillable = ['name','keyword','content','images','price','discount','alias','stock'];
+    protected $fillable = ['name','keyword','category_id','content','images','price','discount','alias','stock'];
+    protected $casts = [
+        'price' => 'integer'
+    ];
 }

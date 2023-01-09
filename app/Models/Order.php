@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
-    protected $fillable = ['name','address','price','phone','email',];
+    protected $fillable = ['name','address','price','discount','phone','email',];
 
     public function products()
     {

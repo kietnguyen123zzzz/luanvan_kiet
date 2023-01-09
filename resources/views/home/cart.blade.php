@@ -49,7 +49,7 @@
                                 </a>  
                                 </a>
                             </td> 
-                            <td class=" px-10 md:px-6 py-3 whitespace-nowrap"><div class="text-red-500 font-bold text-sm md:text-base">{{$product->price}} VNĐ/1kg</div></td>
+                            <td class=" px-10 md:px-6 py-3 whitespace-nowrap"><div class="text-red-500 font-bold text-sm md:text-base">{{$product->price}},000 VNĐ/1kg</div></td>
                             <td class="px-6 py-3 whitespace-nowrap">
                                 <div class="flex gap-5" id="test">
                                     <div id="reduce"><span><i class="fas fa-minus text-sm md:text-base"></i></span></div>
@@ -65,7 +65,7 @@
                             </td>
 
                             <td class="px-6 py-3 whitespace-nowrap text-sm md:text-base">
-                            {{$product->price * $product->qty}} VNĐ/1kg
+                            {{$product->price * $product->qty}},000 VNĐ/1kg
                             </td>
 
                             <td class="px-6 py-3 whitespace-nowrap text-sm md:text-base">
@@ -81,7 +81,7 @@
                  </tbody>
                   <tfoot class="bg-gray-50">
                         <th colspan="4" class="py-2"><span class="uppercase text-sm md:text-base">Tổng tiền</span></th>
-                        <th class="px-6 text-left py-2 text-sm md:text-base">{{ Cart::priceTotal() }}</th>
+                        <th class="px-6 text-left py-2 text-sm md:text-base">{{ Cart::priceTotal() }}0 VNĐ</th>
                         <th></th>
                     </tfoot>
                     </table>

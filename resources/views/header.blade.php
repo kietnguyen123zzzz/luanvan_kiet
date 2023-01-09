@@ -178,7 +178,7 @@ color:#012174;
 </style>
 <!-- Desktop -->
 
-<section class="hidden md:flex  z-50 w-full opacity-100  fixed top-0 "style="background: #ffffff;" > 
+<section class="hidden md:flex  z-50 w-full opacity-95  fixed top-0 "style="background: #ffffff;" > 
   <div class="w-full ">
   <!--<marquee><span class="text-red-700 text-xl">Website đang bảo trì</span></marquee>-->
     <div class=" mx-auto lg:px-5 lg:px-10 py-2 md:py-0">
@@ -194,14 +194,24 @@ color:#012174;
                 Giới thiệu
               </a>
             </li>
-            @foreach($categories as $category)
             <li class="px-4 py-2  hover:text-red-600   text-lucky-point "  >
                     <a href="/product">
                     <img class="lg:w-14 md:w-10 mx-auto" src="/data/cms-image/ICON/sp.png" alt="">
-                    {{$category->name}}
+                      Thế Giới Tôm
                     </a>
               </li>
-            @endforeach
+              <li class="px-4 py-2  hover:text-red-600   text-lucky-point "  >
+                    <a href="/product">
+                    <img class="lg:w-14 md:w-10 mx-auto" src="/data/cms-image/ICON/sp.png" alt="">
+                      Thế Giới Cua
+                    </a>
+              </li>
+              <li class="px-4 py-2  hover:text-red-600   text-lucky-point "  >
+                    <a href="/product">
+                    <img class="lg:w-14 md:w-10 mx-auto" src="/data/cms-image/ICON/sp.png" alt="">
+                      Thế Giới Cá
+                    </a>
+              </li>
              <li class="  hover:text-red-600 lg:px-2 text-lucky-point lg:text-base md:text-xs"  >
                 <a href="http://localhost:8000/lienhe">
                     <img class="lg:w-14 md:w-10 mx-auto" src="/data/cms-image/ICON/lienhe.png" alt="">
@@ -210,9 +220,11 @@ color:#012174;
             </li>
             </ul>
         <div >
-          <a href="http://localhost:8000/cart" >
+         
+            <a href="" >
             <i class="fas fa-shopping-cart text-lucky-point  " style="font-size:24px;" ></i>  <span class="text-red-500">(0)</span>
           </a>
+        
         </div>
         <div class="relative flex flex-row justify-between" >
               <!--<i class="py-2 flex flex-row"> <img class="w-8 h-8 "  src="/images/vietnam.png " > &ensp; <img class="w-8 h-8" src="/images/united-kingdom.png"> </i>-->
@@ -235,7 +247,6 @@ color:#012174;
               </div>
             </div>-->
         </div>
-        <a href="http://localhost:8000/dangnhaphoivien" target = "_ blank"><i class="fas fa-sign-in-alt hover:text-yellow  text-black" style="font-size:16px;"></i> <span class="text-base hover:text-yellow font-bold">Đăng nhập </span></a>
             
       </div>
 

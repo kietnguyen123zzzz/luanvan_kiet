@@ -4,7 +4,7 @@
     <div class="breadcrumbs-custom-footer">
         <div class="container">
           <ul class="flex justify-center">
-            <li><a href="http://localhost:8000/" class=" text-sm md:text-base"> Trang chủ</a>&nbsp;&nbsp;<i class="fas fa-arrow-right text-sm md:text-base "></i>&nbsp;&nbsp;</li>
+            <li><a href="/" class=" text-sm md:text-base"> Trang chủ</a>&nbsp;&nbsp;<i class="fas fa-arrow-right text-sm md:text-base "></i>&nbsp;&nbsp;</li>
                  <li class="font-bold text-sm md:text-base py-1 md:py-0"> Tất cả sản phẩm </li>
                         
           </ul>

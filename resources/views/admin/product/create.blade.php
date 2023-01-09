@@ -18,7 +18,7 @@
         
         <x-adminlte-select label="Chọn Danh Mục"  name="category_id">
             @foreach($categories as $category)
-            <option value="{{$category->category_id}}">{{$category->name}}</option>
+            <option value="{{$category->id}}">{{$category->name}}</option>
             @endforeach        
         </x-adminlte-select>
         <label>URL </label>
