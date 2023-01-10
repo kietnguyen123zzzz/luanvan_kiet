@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<form action="http://localhost:8000/admin/orders/{{$order->id}}/" method="post">
+<form action="http://localhost:8000/admin/orders/{{$order->id}}" method="post">
         @csrf
         @method("PUT")
         <x-adminlte-input value="{{$order->name}}" name="name" label="Tên " placeholder="Tên " />

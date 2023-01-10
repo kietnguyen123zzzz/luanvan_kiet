@@ -14,6 +14,7 @@
             'ID',
             'Name',
             'Phone',
+            'Giá',
             'Email',
             'Địa chỉ',
             ['label' => 'Actions', 'no-export' => true, 'width' => 5],
@@ -34,6 +35,7 @@
                     <td>{{$order->id}}</td>
                     <td>{{$order->name}}</td>
                     <td>{{$order->phone}}</td>
+                    <td>{{$order->price}}</td>
                     <td>{{$order->email}}</td>
                     <td>{{$order->address}}</td>
                     <td>

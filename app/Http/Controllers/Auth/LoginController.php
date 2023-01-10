@@ -35,6 +35,7 @@ class LoginController extends Controller
     public function adminLogin(Request $request)
     {
     return redirect()->intended('/login');
+    
    
 }
 }

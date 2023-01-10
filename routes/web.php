@@ -60,13 +60,15 @@ Route::get('/doimatkhau', [\App\Http\Controllers\Home\DoimatkhauController::clas
 
 Route::get('/admin/orders', [\App\Http\Controllers\Admin\OrderController::class, 'index']);
 Route::get('/admin/orders/create', [\App\Http\Controllers\Admin\OrderController::class, 'create']);
-Route::get('/admin/orders/{id}/edit', [\App\Http\Controllers\Admin\OrderController::class, 'edit']);
-Route::get('/admin/orders/{id}', [\App\Http\Controllers\Admin\OrderController::class, 'show']);
+Route::get('/admin/orders/{order}/edit', [\App\Http\Controllers\Admin\OrderController::class, 'edit']);
+Route::get('/admin/orders/{order}', [\App\Http\Controllers\Admin\OrderController::class, 'show']);
 Route::post('/admin/orders', [\App\Http\Controllers\Admin\OrderController::class, 'store']);
-Route::put('/admin/orders/{id}', [\App\Http\Controllers\Admin\OrderController::class, 'update']);
-Route::delete('/admin/orders/{id}', [\App\Http\Controllers\Admin\OrderController::class, 'destroy']);
+Route::put('/admin/orders/{order}', [\App\Http\Controllers\Admin\OrderController::class, 'update']);
+Route::delete('/admin/orders/{order}', [\App\Http\Controllers\Admin\OrderController::class, 'destroy']);
 Route::post('/cart_add/{product}', [\App\Http\Controllers\Home\CartController::class, 'add']);
 Route::post('/checkout', [\App\Http\Controllers\Home\CartController::class, 'checkout']);
 
 Route::post('/login', [\App\Http\Controllers\Auth\LoginController::class, 'adminLogin']);
 Route::get('/login', [\App\Http\Controllers\Auth\LoginController::class, 'index']);
+
+Route::get('/admin', [\App\Http\Controllers\Admin\AdminController::class, 'index']);
