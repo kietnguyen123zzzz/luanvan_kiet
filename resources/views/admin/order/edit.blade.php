@@ -13,8 +13,12 @@
         <x-adminlte-input value="{{$order->name}}" name="name" label="Tên " placeholder="Tên " />
    
         <x-adminlte-input  value="{{$order->address}}" name="address" label="Địa chỉ" placeholder="Địa chỉ" />
+
+        <x-adminlte-input  value="" name="" label="Tên sản phẩm" placeholder="Tên sản phẩm" />
         
         <x-adminlte-input  value="{{$order->price}}" name="price" label="Giá" placeholder="Giá" />
+
+        <x-adminlte-input  value="1" name="" label="Số lượng" placeholder="Số lượng" />
         
         <x-adminlte-input  value="{{$order->phone}}" name="phone" label="Số điện thoại" placeholder="Số điện thoại" />
 
