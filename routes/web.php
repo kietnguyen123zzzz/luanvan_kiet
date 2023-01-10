@@ -67,6 +67,8 @@ Route::put('/admin/orders/{order}', [\App\Http\Controllers\Admin\OrderController
 Route::delete('/admin/orders/{order}', [\App\Http\Controllers\Admin\OrderController::class, 'destroy']);
 Route::post('/cart_add/{product}', [\App\Http\Controllers\Home\CartController::class, 'add']);
 Route::post('/checkout', [\App\Http\Controllers\Home\CartController::class, 'checkout']);
+Route::delete('/cart_delete', [\App\Http\Controllers\Home\CartController::class, 'destroy']);
+Route::post('/update', [\App\Http\Controllers\Home\CartController::class, 'update']);
 
 Route::post('/login', [\App\Http\Controllers\Auth\LoginController::class, 'adminLogin']);
 Route::get('/login', [\App\Http\Controllers\Auth\LoginController::class, 'index']);

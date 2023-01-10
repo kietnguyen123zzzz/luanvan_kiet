@@ -221,7 +221,7 @@ color:#012174;
             </ul>
         <div >
          
-            <a href="" >
+            <a href="/cart" >
             <i class="fas fa-shopping-cart text-lucky-point  " style="font-size:24px;" ></i>  <span class="text-red-500">(0)</span>
           </a>
         

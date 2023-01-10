@@ -7,6 +7,7 @@ use App\Models\Home;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Order;
+use App\Models\Category;
 
 use Cart;
 
@@ -20,8 +21,10 @@ class CartController extends Controller
     public function show()
     {
        $products = Cart::content();
+       $categories = Category::all();
         return view('home.cart', [
-            'products' => $products
+            'products' => $products,
+            'categories' => $categories
         ]);
     }
 
@@ -30,14 +33,22 @@ class CartController extends Controller
         $id = $product->id;
         $name = $product->name;
         $price = (int)$product->price;
-        $discount = (int)$product->discount;
+        $discount = (int) $product->discount;
+
+        if($discount>0)
+        {
+            $final_price = $discount;
+        }else{
+            $final_price = $price;
+        }
+
         $quantity = 1;
         if($request->has('quantity'))
         {
             $quantity = $request->post('quantity');
         }
 
-        Cart::add($id, $name, $quantity, $price,$discount)->associate('App\Models\Product');
+        Cart::add($id, $name, $quantity, $final_price)->associate('App\Models\Product');
         return redirect('/cart');
 
     }
@@ -82,5 +93,21 @@ class CartController extends Controller
         {
             Cart::remove($product->rowId);
         }
+    }
+
+
+    public function destroy(Request $request)
+    {
+        $rowId = $request->post('rowId');
+        Cart::remove($rowId);
+        return redirect()->back();
+    }
+
+
+    public function update(Request $request)
+    {
+        $rowId = $request->post('rowId');
+        Cart::update($rowId, $request->quantity);
+        return response()->json(['success' => 'oke'], 200);
     }
 }
